@@ -9,18 +9,19 @@
 
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
+import tailwindcss from 'tailwindcss'
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    tailwindcss({
-      // Force JS mode for lightningcss (avoids Rust binary issues on Vercel)
-      experimental: {
-        importFrom: undefined,
-        enableRust: false,
-      },
-    }),
-  ],
+  plugins: [react()],
+  css: {
+    postcss: {
+      plugins: [
+        tailwindcss({
+          experimental: {
+            enableRust: false, // Force JS mode
+          },
+        }),
+      ],
+    },
+  },
 })
