@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { APP_FEATURES } from "../Utils/data";
 import { LuSparkles } from "react-icons/lu";
-import Modal from "../components/mODAL.JSX";
+import Modal from "../components/Modal"
 import SignUp from "./Auth/SignUp";
 import Login from "./Auth/Login";
 import { UserContext } from "../context/userContext";
