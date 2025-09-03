@@ -17,10 +17,14 @@ export interface ApiResponse<T = any> {
 // Session types
 export interface Session {
   _id: string;
-  title: string;
+  // Some sessions are created with 'role' instead of 'title'
+  role?: string;
+  title?: string;
   description?: string;
   userId: string;
   questions: Question[];
+  experience?: string | number;
+  topicsToFocus?: string | string[];
   createdAt: string;
   updatedAt: string;
 }

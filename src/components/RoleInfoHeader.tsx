@@ -4,7 +4,7 @@ import React from 'react';
 
 interface RoleInfoHeaderProps {
   role: string;
-  topicsToFocus: string;
+  topicsToFocus: string | string[];
   experience: string;
   questions: number;
   description: string;
@@ -35,7 +35,7 @@ const RoleInfoHeader: React.FC<RoleInfoHeaderProps> = ({
           {role}
         </h2>
         <p className="text-sm md:text-base text-gray-100 mt-2 opacity-90">
-          {topicsToFocus}
+          {Array.isArray(topicsToFocus) ? topicsToFocus.join(', ') : topicsToFocus}
         </p>
 
         {/* Info Badges */}
