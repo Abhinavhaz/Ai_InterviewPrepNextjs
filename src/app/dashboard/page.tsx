@@ -160,28 +160,24 @@ const DashboardPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50">
-      <div className='px-1 pt-6'>
+    <>
+    <div className='px-4 pt-6 border-b border-gray-100 shadow-sm'>
       <Navbar />
       </div>
+    <div className="min-h-screen px-4 bg-gradient-to-br from-sky-100 via-white to-blue-100">
+      
       {/* Header */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-purple-100">
-        <div className="container mx-auto px-4 py-6">
+      
+        <div className="container mx-auto px-4 py-2">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
+              <h1 className="text-4xl font-extrabold bg-gradient-to-r from-indigo-700 via-sky-600 to-cyan-500 bg-clip-text text-transparent drop-shadow-sm">Dashboard</h1>
               <p className="text-gray-600 mt-1">Your interview prep sessions!</p>
             </div>
-            <button
-              onClick={() => setShowCreateModal(true)}
-              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-200 flex items-center gap-2"
-            >
-              <LuPlus className="w-5 h-5" />
-              New Session
-            </button>
+           
           </div>
         </div>
-      </div>
+      
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-8">
@@ -318,7 +314,22 @@ const DashboardPage: React.FC = () => {
         </div>
       </Modal>
 
+{/* Floating New Session Button */}
+<div className="fixed bottom-6 right-6 z-50">
+  <button
+    onClick={() => setShowCreateModal(true)}
+    className="flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 
+               text-white px-5 py-3 rounded-full font-semibold shadow-lg 
+               hover:from-purple-700 hover:to-pink-700 hover:scale-105 
+               transition-all duration-300"
+  >
+    <LuPlus className="w-5 h-5" />
+    <span className="hidden sm:inline">New Session</span>
+  </button>
+</div>
+
     </div>
+    </>
   );
 };
 
